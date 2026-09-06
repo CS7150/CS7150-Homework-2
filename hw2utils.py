@@ -47,7 +47,7 @@ class LossFunctionWithPlot:
                 grads = torch.stack(grads)
             ax3.set_title('progress of x[0] component of gradient')
             ax3.plot(range(len(grads)), grads[:,0], marker='o')
-            ax3.set_ylabel('$\partial L/\partial x_0$')
+            ax3.set_ylabel(r'$\partial L/\partial x_0$')
             ax3.set_ylim(grads.abs().max() * -1.1, grads.abs().max() * 1.1)
             ax3.set_xlabel('iteration')
             if mean_grads is not None:
@@ -59,7 +59,7 @@ class LossFunctionWithPlot:
                 ax3.legend()
             ax4.set_title('progress of x[1] component of gradient')
             ax4.plot(range(len(grads)), grads[:,1], marker='o')
-            ax4.set_ylabel('$\partial L/\partial x_1$')
+            ax4.set_ylabel(r'$\partial L/\partial x_1$')
             ax4.set_ylim(grads.abs().max() * -1.1, grads.abs().max() * 1.1)
             ax4.set_xlabel('iteration')
             if mean_grads is not None:
